@@ -34,3 +34,4 @@ xlabel('Timp [s]')
 ylabel('A [V]')
 plot(t,s)
 grid
+%perioadaa fost schimbata la 6 secunde pentru ca panta sa fie de 1V/s
