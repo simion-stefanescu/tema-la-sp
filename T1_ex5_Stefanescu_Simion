@@ -1,0 +1,32 @@
+ %Sinusoidal redresat dubla-alternanta
+%T=4s, A=1.5
+t = 0:0.002:8; %0.002 = 2ms = rezolutia temporala
+
+s=1.5*abs( sin(2*pi*t*1/4) ); %redresare
+subplot(3,1,1)
+plot(t, s );
+title('Sinus redresat dubla-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')
+
+
+%T=4s, A=1.5
+t = 0:0.02:8; %0.02 = 20ms = rezolutia temporala
+
+s=1.5*abs( sin(2*pi*t*1/4) ); %redresare
+subplot(3,1,2)
+plot(t, s);
+title('Sinus redresat dubla-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')
+
+
+%T=4s, A=1.5
+t = 0:0.2:8; %0.2 = 200ms = rezolutia temporala
+
+s=1.5*abs( sin(2*pi*t*1/4) ); %redresare
+subplot(3,1,3)
+plot(t, s );
+title('Sinus redresat dubla-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')
