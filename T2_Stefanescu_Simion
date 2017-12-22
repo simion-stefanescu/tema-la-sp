@@ -7,13 +7,13 @@ w=2*pi/P; % pulsatia semnalului
 t=0:0.4:3*P; %semnalul are o rezolutie temporala de 0.4 secunde
              % si vor fi afisate 3 perioade
 
-s=0.834*sawtooth(w*t,0.5)+0.166; %am folosit functia sawtooth pt generarea semnalului triunghiular
+s=0.555*sawtooth(w*t,0.5)+0.445; %am folosit functia sawtooth pt generarea semnalului triunghiular
 %pentru care am ajustat amplitudinea si componenta continua, astfel incat
 %amplitudinea semnalului sa fie 1 si durata D=18;
 %al doilea parametru al functiei este folosit pentru a regla panta dreptei
 %semnalului, pt valoarea 0.5 se genereaza un semnal triunghiular simetric
 
-for i=1:length(s)  %toate valorile semnalului aflate in afara duratei [8,20] devin nule
+for i=1:length(s)  %toate valorile semnalului aflate in afara duratei [2,20] devin nule
     if (s(i)<0)
         s(i)=0;
     end
@@ -29,10 +29,10 @@ y=0:N; %y va contine coeficientii Fourier ai semnalului
 
 syms x %variabila generica folosita in calculul integral
 for k=0:N
-    y(k+1)=1/P*(int((0.0833*x-0.66)*exp(-1i*k*w*x),8,20) + int((-0.0833*x+2.66)*exp(-1i*k*w*x),20,32));
+    y(k+1)=1/P*(int((0.0555*x-0.20)*exp(-1i*k*w*x),2,20) + int((-0.0555*x+2.20)*exp(-1i*k*w*x),20,38));
 end
 % calculez cei 50 de coeficienti integrand cele 2 drepte care formeaza
-% semnalul, pe intervalul [8,20], respectiv [20,32]
+% semnalul, pe intervalul [2,20], respectiv [20,38]
 
 figure(2)          %afisez spectrul semnalului
 stem(0:N,abs(y))
